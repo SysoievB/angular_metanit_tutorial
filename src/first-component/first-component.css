@@ -1,0 +1,10 @@
+p {
+  color: green;
+  font-weight: bold;
+}
+/*host - apply styles to the component’s root tag, not just its inner HTML*/
+:host {
+  display: block;
+  border: 2px solid red;
+  padding: 10px;
+}
