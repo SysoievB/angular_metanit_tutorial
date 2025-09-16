@@ -1,0 +1,17 @@
+<h2>One-way binding (property binding)</h2>
+<input type="text" [value]="name"/>
+<p>Value: {{ name }}</p>
+<!--
+name = 'Vasia' → input shows Vasia.
+You type Petia in the input → UI shows Petia, but name in TS is still 'Vasia'.
+-->
+<hr/>
+
+<h2>Two-way binding (ngModel)</h2>
+<input type="text" [(ngModel)]="name"/>
+<p>Value: {{ name }}</p>
+<!--
+name = 'Vasia' → input shows Vasia.
+You type Petia → now name = 'Petia' in TS.
+The <p> prints Petia immediately.
+-->
