@@ -2,3 +2,5 @@
 <binding-component/>
 <operators-component/>
 <input-decorator-component [userName]="name" [userAge]="age"/>
+<output-decorator-component (countChanged)="onCountChanged($event)"/>
+<p>Count from output-decorator-component: {{ count }}</p>

@@ -4,10 +4,11 @@ import {FirstComponent} from './first-component/first-component';
 import {BindingComponent} from './binding-component/binding-component';
 import {OperatorsComponent} from './operators-component/operators-component';
 import {InputDecoratorComponent} from './input-decorator-component/input-decorator-component';
+import {OutputDecoratorComponent} from './output-decorator-component/output-decorator-component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FirstComponent, BindingComponent, OperatorsComponent, InputDecoratorComponent],
+  imports: [FirstComponent, BindingComponent, OperatorsComponent, InputDecoratorComponent, OutputDecoratorComponent ],
   templateUrl: './app.html',
   styleUrl: './app.css',
   standalone: true
@@ -15,5 +16,11 @@ import {InputDecoratorComponent} from './input-decorator-component/input-decorat
 export class App {
   name: string = "Tom";
   age: number = 24;
+  count = 0;
+
+  onCountChanged(newCount: number) {
+    this.count = newCount;// receives event from child
+  }
+
   protected readonly title = signal('angular-metanit-tutorial');
 }
