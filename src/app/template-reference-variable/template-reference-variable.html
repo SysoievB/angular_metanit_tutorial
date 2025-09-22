@@ -1,1 +1,11 @@
-<p>template-reference-variable works!</p>
+<!-- Create a template reference variable on the input -->
+<h2>Template reference variable</h2>
+<input #nameInput type="text" placeholder="Enter your name">
+
+<!-- Use the variable to pass value into the component method -->
+<button (click)="sayHello(nameInput.value)">Greet</button>
+<!-- Scope of Template Reference Variables (#var)
+They only exist inside the same template where you declare them.
+You cannot access them directly in:
+A different component’s template
+The component’s TypeScript class -->
