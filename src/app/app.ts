@@ -6,10 +6,19 @@ import {OperatorsComponent} from './operators-component/operators-component';
 import {InputDecoratorComponent} from './input-decorator-component/input-decorator-component';
 import {OutputDecoratorComponent} from './output-decorator-component/output-decorator-component';
 import {TemplateReferenceVariable} from './template-reference-variable/template-reference-variable';
+import {AttributeDirective} from './attribute-directive';
 
 @Component({
   selector: 'app-root',
-  imports: [FirstComponent, BindingComponent, OperatorsComponent, InputDecoratorComponent, OutputDecoratorComponent, TemplateReferenceVariable],
+  imports: [
+    FirstComponent,
+    BindingComponent,
+    OperatorsComponent,
+    InputDecoratorComponent,
+    OutputDecoratorComponent,
+    TemplateReferenceVariable,
+    AttributeDirective
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css',
   standalone: true
