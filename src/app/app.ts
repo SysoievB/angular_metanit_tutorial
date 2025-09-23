@@ -10,6 +10,7 @@ import {AttributeDirective} from './attribute-directive';
 import {StructuralDirective} from './structural-directive';
 import {DataService} from './DataService';
 import {FormsModule} from '@angular/forms';
+import {LogService} from './LogService';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,7 @@ import {FormsModule} from '@angular/forms';
     StructuralDirective,
     FormsModule
   ],
-  providers: [DataService],//for the service
+  providers: [DataService, LogService],//for the service
   templateUrl: './app.html',
   styleUrl: './app.css',
   standalone: true
