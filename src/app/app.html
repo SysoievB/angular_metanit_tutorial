@@ -9,3 +9,14 @@
 <p *while="condition">This is a structural directive -- First paragraph</p>
 <p *while="!condition">This is a structural directive -- Second paragraph</p>
 <button (click)="toggle()">Toggle</button>
+<!-- DataService  code-->
+<div>
+        <div><input [(ngModel)]="serviceName"/>
+            <button (click)="addItem(serviceName)">Add</button>
+        </div>
+        <ul>
+        @for (item of items; track $index) {
+          <li>{{ item }}</li>
+        }
+        </ul>
+    </div>

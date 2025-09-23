@@ -8,6 +8,8 @@ import {OutputDecoratorComponent} from './output-decorator-component/output-deco
 import {TemplateReferenceVariable} from './template-reference-variable/template-reference-variable';
 import {AttributeDirective} from './attribute-directive';
 import {StructuralDirective} from './structural-directive';
+import {DataService} from './DataService';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -19,8 +21,10 @@ import {StructuralDirective} from './structural-directive';
     OutputDecoratorComponent,
     TemplateReferenceVariable,
     AttributeDirective,
-    StructuralDirective
+    StructuralDirective,
+    FormsModule
   ],
+  providers: [DataService],//for the service
   templateUrl: './app.html',
   styleUrl: './app.css',
   standalone: true
@@ -31,6 +35,19 @@ export class App {
   age: number = 24;
   count = 0;
   condition = true;
+  items: string[] = [];
+  serviceName: string = "";
+
+
+  constructor(private dataService: DataService){}
+
+  addItem(serviceName: string){
+    this.dataService.addData(serviceName);
+  }
+
+  ngOnInit(){
+    this.items = this.dataService.getData();
+  }
 
   ngAfterViewInit() {
     this.templateRefVar.sayHello("World"); // Calls child method
