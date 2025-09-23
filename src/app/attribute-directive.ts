@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Renderer2} from '@angular/core';
+import {Directive, ElementRef, Input, Renderer2} from '@angular/core';
 
 @Directive({
   selector: "[bold]",
@@ -14,6 +14,9 @@ import {Directive, ElementRef, Renderer2} from '@angular/core';
   }
 })
 export class AttributeDirective {
+/*--custom attribute directive--*/
+  @Input() selectedSize = "38px";
+  @Input() defaultSize = "16px";
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {
     this.elementRef.nativeElement.style.fontWeight = "bold";
