@@ -7,6 +7,7 @@ import {InputDecoratorComponent} from './input-decorator-component/input-decorat
 import {OutputDecoratorComponent} from './output-decorator-component/output-decorator-component';
 import {TemplateReferenceVariable} from './template-reference-variable/template-reference-variable';
 import {AttributeDirective} from './attribute-directive';
+import {StructuralDirective} from './structural-directive';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import {AttributeDirective} from './attribute-directive';
     InputDecoratorComponent,
     OutputDecoratorComponent,
     TemplateReferenceVariable,
-    AttributeDirective
+    AttributeDirective,
+    StructuralDirective
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',
@@ -28,15 +30,18 @@ export class App {
   name: string = "Tom";
   age: number = 24;
   count = 0;
-
+  condition = true;
 
   ngAfterViewInit() {
     this.templateRefVar.sayHello("World"); // Calls child method
   }
 
-
   onCountChanged(newCount: number) {
     this.count = newCount;// receives event from child
+  }
+
+  toggle() {
+    this.condition = !this.condition;//used in structural directive
   }
 
   protected readonly title = signal('angular-metanit-tutorial');

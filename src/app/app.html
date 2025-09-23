@@ -6,3 +6,6 @@
 <p>Count from output-decorator-component: {{ count }}</p>
 <template-reference-variable/>
 <h2 bold [selectedSize]="'38px'" [defaultSize]="'14px'">This is an --Attribute directive--</h2>
+<p *while="condition">This is a structural directive -- First paragraph</p>
+<p *while="!condition">This is a structural directive -- Second paragraph</p>
+<button (click)="toggle()">Toggle</button>
