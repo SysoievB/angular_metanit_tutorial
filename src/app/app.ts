@@ -11,6 +11,7 @@ import {StructuralDirective} from './structural-directive';
 import {DataService} from './DataService';
 import {FormsModule} from '@angular/forms';
 import {LogService} from './LogService';
+import {IntegratedPipes} from './integrated-pipes/integrated-pipes';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ import {LogService} from './LogService';
     TemplateReferenceVariable,
     AttributeDirective,
     StructuralDirective,
-    FormsModule
+    FormsModule, //for [(ngModel)] usage
+    IntegratedPipes
   ],
   providers: [DataService, LogService],//for the service
   templateUrl: './app.html',
