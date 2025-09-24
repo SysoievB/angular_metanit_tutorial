@@ -25,7 +25,7 @@ import {CustomPipe} from '../custom-pipe/custom-pipe';
   templateUrl: './integrated-pipes.html',
   styleUrl: './integrated-pipes.css'
 })
-export class IntegratedPipes {
+export class IntegratedPipes {// By default, all pipes are pure(changes not allowed)
   welcome: string = "Hello World!";
   percentage: number = 0.14;
   myDate = Date.now();

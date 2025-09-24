@@ -2,7 +2,8 @@ import { Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
   name: "format",
-  standalone: true
+  standalone: true,
+  pure: true // By default, all pipes are pure(changes not allowed)
 })
 export class CustomPipe implements PipeTransform {
 
